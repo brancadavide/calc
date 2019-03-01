@@ -1,6 +1,23 @@
-<h1>Editing Store</h1>
 
-<%= render 'form', store: @store %>
 
-<%= link_to 'Show', @store %> |
+
+
+
+
+
+
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h1><%= @store.name%></h1>
+    </div>
+    <div class="panel-body">  
+
+        <%= render 'form', store: @store %>
+      
+    </div>
+  </div>  
+
+</div>
+
 <%= link_to 'Back', stores_path %>

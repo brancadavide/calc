@@ -14,3 +14,14 @@
 //= require activestorage
 //= require jquery
 //= require bootstrap-sprockets
+
+
+
+$(document).ready(function(){
+		$(".rowlink").on("click", function(e) {
+				var loc = window.location;
+
+				console.log(loc.protocol + "//" + loc.host + $(this).attr('id'));
+				window.location.href = loc.protocol + "//" + loc.host + $(this).attr('id');
+			});
+});

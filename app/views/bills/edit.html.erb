@@ -1,6 +1,17 @@
-<h1>Editing Bill</h1>
 
-<%= render 'form', bill: @bill %>
 
-<%= link_to 'Show', @bill %> |
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1>Editing Bill</h1>
+    </div>
+    <div class="panel-body">  
+
+        <%= render 'form', bill: @bill %>
+      
+    </div>
+  </div>  
+
+</div>
+
 <%= link_to 'Back', bills_path %>

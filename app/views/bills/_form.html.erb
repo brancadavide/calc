@@ -1,42 +1,38 @@
 <%= form_with(model: bill, local: true) do |form| %>
-  <% if bill.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(bill.errors.count, "error") %> prohibited this bill from being saved:</h2>
-
-      <ul>
-      <% bill.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :type_of %>
-    <%= form.text_field :type_of %>
+ 
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= form.label :type_of,"Type" , class: "control-label" %>
+    <%= form.select :type_of,["Food","Non-Food","Mixed"], {}, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :date_of %>
-    <%= form.date_select :date_of %>
+  <div class="form-group col-lg-6">
+    <%= form.label :date_of,  class: "control-label" %>
+    <%= form.date_field :date_of , class: "form-control"  %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= form.label :store_id, "Store", class: "control-label" %>
+    <%= form.select :store_id, Store.all.map { |store| [store.name, store.id] }, {}, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :store_id %>
-    <%= form.text_field :store_id %>
-  </div>
 
-  <div class="field">
-    <%= form.label :amount %>
-    <%= form.text_field :amount %>
+  <div class="form-group col-lg-6">
+    <%= form.label :amount, class: "control-label" %>
+    <%= form.text_field :amount, class: "form-control" %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :notification %>
-    <%= form.text_area :notification %>
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= form.label :notification,  class: "control-label" %>
+    <%= form.text_area :notification, class: "form-control" %>
   </div>
+</div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Save", class: "btn btn-success" %>
   </div>
 <% end %>

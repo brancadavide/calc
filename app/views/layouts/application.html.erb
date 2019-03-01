@@ -10,8 +10,13 @@
   </head>
 
   <body>
-    <div class="container-fluid">
-    <%= yield %>
+    <div class="padding-top">
+      <% unless controller_name.eql? "welcome"%>
+          <%= link_to "Start", root_path, class: "back-to-root" %>
+      <% end %>
+      <div class="container-fluid">
+      <%= yield %>
+      </div>
     </div>
   </body>
 </html>
