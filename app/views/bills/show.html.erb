@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type of:</strong>
+  <%= @bill.type_of %>
+</p>
+
+<p>
+  <strong>Date of:</strong>
+  <%= @bill.date_of %>
+</p>
+
+<p>
+  <strong>Store:</strong>
+  <%= @bill.store %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @bill.amount %>
+</p>
+
+<p>
+  <strong>Notification:</strong>
+  <%= @bill.notification %>
+</p>
+
+<%= link_to 'Edit', edit_bill_path(@bill) %> |
+<%= link_to 'Back', bills_path %>
